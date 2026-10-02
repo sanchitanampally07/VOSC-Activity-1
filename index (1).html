@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VOSC Activity-1 — a refined two-player Tic-Tac-Toe built with only HTML, CSS and vanilla JavaScript.">
+  <meta name="color-scheme" content="dark">
+  <title>Tic Tac Toe — VOSC Activity-1</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="backdrop" aria-hidden="true">
+    <span class="ring ring-a"></span>
+    <span class="ring ring-b"></span>
+    <span class="beam"></span>
+  </div>
+
+  <main class="stage">
+
+    <div class="side">
+      <header class="intro">
+        <h1 class="title">
+          <span class="word reveal d2">Tic</span>
+          <span class="word word-italic reveal d3">Tac</span>
+          <span class="word reveal d4">Toe</span>
+        </h1>
+        <p class="tagline reveal d5">Three marks. One winner.</p>
+      </header>
+
+      <section class="scoreboard reveal d5" aria-label="Scoreboard">
+        <div class="score-row" data-key="X">
+          <span class="score-label">Player X</span>
+          <span class="score-value" id="score-x">00</span>
+        </div>
+        <div class="score-row" data-key="O">
+          <span class="score-label">Player O</span>
+          <span class="score-value" id="score-o">00</span>
+        </div>
+        <div class="score-row" data-key="draw">
+          <span class="score-label">Draw</span>
+          <span class="score-value" id="score-draw">00</span>
+        </div>
+      </section>
+
+      <p class="footnote reveal d5">HTML · CSS · Vanilla JavaScript</p>
+    </div>
+
+    <section class="arena" aria-label="Game">
+      <div class="board-frame reveal d3">
+        <div class="board" id="board" role="group" aria-label="Tic-Tac-Toe board" data-turn="X" data-state="playing">
+          <svg class="win-line" id="win-line-svg" viewBox="0 0 300 300" aria-hidden="true" focusable="false">
+            <line id="win-line" pathLength="1" x1="0" y1="0" x2="0" y2="0"></line>
+          </svg>
+        </div>
+      </div>
+
+      <p class="status reveal d4" id="status" role="status" aria-live="polite" data-tone="turn">Turn → X</p>
+
+      <div class="controls reveal d5">
+        <button class="btn btn-primary" id="new-round" type="button">
+          <span>New round</span>
+          <span class="btn-icon" aria-hidden="true">↻</span>
+        </button>
+        <button class="btn btn-quiet" id="reset-score" type="button">Reset score</button>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
